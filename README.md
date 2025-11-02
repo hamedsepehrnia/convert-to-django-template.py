@@ -1,187 +1,98 @@
-# تبدیل‌کننده HTML به Django Template | HTML to Django Template Converter
+# Django Template Converter
+
+A graphical tool for converting HTML files to standard Django templates
+
+[![Persian](https://img.shields.io/badge/lang-persian-blue?style=for-the-badge)](#فارسی)
+[![English](https://img.shields.io/badge/lang-English-green?style=for-the-badge)](#english)
 
 ---
 
-<div dir="rtl">
+## Support
 
-## معرفی | Introduction
+<a href="https://www.coffeebede.com/hamesep">
+  <img src="https://coffeebede.ir/DashboardTemplateV2/app-assets/images/banner/default-yellow.svg" alt="Buy Me A Coffee" height="60">
+</a>
 
-یک ابزار گرافیکی برای تبدیل خودکار فایل‌های HTML به تمپلیت استاندارد Django با رابط کاربری زیبا و کاربرپسند.
+<a href="https://nowpayments.io/donation?api_key=19623fa3-605a-436a-97cd-b5859356b41d" target="_blank">
+  <img src="https://img.shields.io/badge/Donate-Crypto-blue?style=for-the-badge&logo=bitcoin&logoColor=white" alt="Donate with Crypto" height="50">
+</a>
 
-A graphical tool for automatically converting HTML files to standard Django templates with a beautiful and user-friendly interface.
+---
 
+## English
+
+### Overview
+
+Django Template Converter is a desktop application that automatically converts HTML files to Django-compatible templates. The tool features a graphical interface built with tkinter and handles conversion of static asset references to Django's template syntax.
+
+### Interface Preview
+
+<div align="center">
+  <img src="screenshots/app-interface.png" alt="Django Template Converter Interface" width="800">
+  <p><em>Main application interface showing input/output panels and conversion controls</em></p>
 </div>
 
----
+### Features
 
-## ویژگی‌ها | Features
+**Interface**
+- Graphical user interface with dual-column layout
+- Support for both code input and file selection
+- Real-time conversion preview
 
-<div dir="rtl">
+**Conversion Capabilities**
+- Automatic insertion of `{% load static %}` tag
+- CSS stylesheet link conversion
+- JavaScript source conversion
+- Image source conversion
+- Audio and video source conversion
+- Srcset attribute conversion for responsive images
 
-- **رابط کاربری گرافیکی** - استفاده آسان با رابط کاربری tkinter
-- **ورودی و خروجی انعطاف‌پذیر** - انتخاب بین کد مستقیم یا فایل برای ورودی و خروجی
-- **دو ستون کنار هم** - فیلد بزرگ برای کد ورودی (سمت چپ) و کد خروجی (سمت راست)
-- **تبدیل خودکار** - تبدیل تمام لینک‌های استاتیک به `{% static %}`
-- **پشتیبانی از انواع فایل** - تبدیل CSS، JavaScript، تصاویر و سایر فایل‌های استاتیک
-- **سریع و کارآمد** - تبدیل فایل‌های بزرگ در کسری از ثانیه
-- **نمایش همزمان** - می‌توانید کد را ببینید و فایل را نیز ذخیره کنید
+**Flexibility**
+- Direct code input or file selection for input
+- Display output in interface or save to file
+- Simultaneous display and file saving
 
-</div>
+### Technology Stack
 
-**English:**
-- **Graphical User Interface** - Easy to use with tkinter GUI
-- **Flexible Input and Output** - Choose between direct code or file for input and output
-- **Two Columns Side by Side** - Large field for input code (left) and output code (right)
-- **Automatic Conversion** - Converts all static links to `{% static %}`
-- **Multi-file Support** - Converts CSS, JavaScript, images and other static files
-- **Fast and Efficient** - Convert large files in seconds
-- **Simultaneous Display** - You can view the code and save the file at the same time
+| Component | Technology |
+|-----------|------------|
+| Language | Python 3.6+ |
+| HTML Parser | BeautifulSoup4 |
+| XML Parser | lxml |
+| GUI Framework | tkinter |
+| Package Management | setuptools |
 
----
+### Installation
 
-## نیازمندی‌ها | Requirements
-
-<div dir="rtl">
-
-- Python 3.6 یا بالاتر
-- BeautifulSoup4
-- tkinter (معمولاً به صورت پیش‌فرض در Python نصب است)
-
-</div>
-
-**English:**
-- Python 3.6 or higher
-- BeautifulSoup4
-- tkinter (usually pre-installed with Python)
-
----
-
-## نصب | Installation
-
-### 1. کلون یا دانلود پروژه | Clone or Download the Project
-
-<div dir="rtl">
-
+1. Clone the repository
 ```bash
 git clone <repository-url>
-cd convert_to_django_template.py
+cd convert-to-django-template.py
 ```
 
-</div>
-
-**English:**
-```bash
-git clone <repository-url>
-cd convert_to_django_template.py
-```
-
-### 2. نصب وابستگی‌ها | Install Dependencies
-
-<div dir="rtl">
-
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-یا به صورت دستی:
-
-```bash
-pip install beautifulsoup4 lxml
-```
-
-</div>
-
-**English:**
-```bash
-pip install -r requirements.txt
-```
-
-Or manually:
-```bash
-pip install beautifulsoup4 lxml
-```
-
-### 3. نصب پکیج (اختیاری) | Install Package (Optional)
-
-<div dir="rtl">
-
-برای استفاده از پکیج به عنوان ماژول Python:
-
+3. (Optional) Install as package
 ```bash
 pip install -e .
 ```
 
-این دستور پکیج را در حالت "editable" نصب می‌کند، به این معنی که می‌توانید تغییرات را بدون نصب مجدد اعمال کنید.
+### Usage
 
-</div>
-
-**English:**
-
-To use the package as a Python module:
-
-```bash
-pip install -e .
-```
-
-This command installs the package in "editable" mode, meaning you can apply changes without reinstalling.
-
----
-
-## نحوه استفاده | Usage
-
-### روش اول: اجرای مستقیم با main.py | Method 1: Direct Execution with main.py
-
-<div dir="rtl">
-
+**Method 1: Direct Execution**
 ```bash
 python main.py
 ```
 
-یا:
-
+**Method 2: Command Line (after package installation)**
 ```bash
-python3 main.py
-```
-
-</div>
-
-**English:**
-```bash
-python main.py
-```
-
-Or:
-```bash
-python3 main.py
-```
-
-### روش دوم: نصب به عنوان پکیج | Method 2: Install as Package
-
-<div dir="rtl">
-
-```bash
-# نصب در حالت توسعه (editable mode)
-pip install -e .
-
-# سپس اجرا
 django-template-converter
 ```
 
-</div>
-
-**English:**
-```bash
-# Install in editable mode
-pip install -e .
-
-# Then run
-django-template-converter
-```
-
-### روش سوم: استفاده به عنوان ماژول | Method 3: Use as Module
-
-<div dir="rtl">
-
+**Method 3: Python Module**
 ```python
 from django_template_converter import Converter
 
@@ -189,209 +100,9 @@ converter = Converter()
 output_path = converter.convert_file("input.html", "output.html")
 ```
 
-</div>
+### Conversion Examples
 
-**English:**
-```python
-from django_template_converter import Converter
-
-converter = Converter()
-output_path = converter.convert_file("input.html", "output.html")
-```
-
----
-
-## راهنمای استفاده | User Guide
-
-### گام 1: اجرای برنامه | Step 1: Run the Application
-
-<div dir="rtl">
-
-پس از نصب وابستگی‌ها، فایل `main.py` را اجرا کنید:
-
-```bash
-python main.py
-```
-
-</div>
-
-**English:**
-
-After installing dependencies, run `main.py`:
-
-```bash
-python main.py
-```
-
-### گام 2: انتخاب نوع ورودی | Step 2: Select Input Type
-
-<div dir="rtl">
-
-رابط کاربری دارای دو ستون است:
-- **ستون چپ (Input)**: برای ورودی
-- **ستون راست (Output)**: برای خروجی
-
-برای ورودی، می‌توانید یکی از دو گزینه را انتخاب کنید:
-- **Code**: مستقیماً کد HTML را در فیلد بزرگ متنی وارد کنید
-- **File**: فایل HTML را از سیستم انتخاب کنید
-
-</div>
-
-**English:**
-
-The user interface has two columns:
-- **Left column (Input)**: For input
-- **Right column (Output)**: For output
-
-For input, you can choose one of two options:
-- **Code**: Enter HTML code directly in the large text field
-- **File**: Select an HTML file from your system
-
-### گام 3: انتخاب نوع خروجی | Step 3: Select Output Type
-
-<div dir="rtl">
-
-برای خروجی نیز می‌توانید یکی از دو گزینه را انتخاب کنید:
-- **Code**: کد تبدیل شده در فیلد بزرگ متنی نمایش داده می‌شود (می‌توانید آن را کپی کنید)
-- **File**: فایل تبدیل شده در مسیر مشخص شده ذخیره می‌شود
-
-**نکته**: می‌توانید همزمان از هر دو گزینه استفاده کنید. برای مثال، کد را در فیلد متنی ببینید و همچنین فایل را نیز ذخیره کنید.
-
-</div>
-
-**English:**
-
-For output, you can also choose one of two options:
-- **Code**: The converted code is displayed in the large text field (you can copy it)
-- **File**: The converted file is saved at the specified path
-
-**Note**: You can use both options simultaneously. For example, view the code in the text field and also save the file.
-
-### گام 4: وارد کردن یا انتخاب ورودی | Step 4: Enter or Select Input
-
-<div dir="rtl">
-
-**اگر Code را انتخاب کرده‌اید:**
-1. کد HTML خود را در فیلد بزرگ متنی سمت چپ وارد کنید
-
-**اگر File را انتخاب کرده‌اید:**
-1. روی دکمه **"Browse..."** کلیک کنید
-2. فایل HTML مورد نظر خود را انتخاب کنید
-3. می‌توانید محتوای فایل را در فیلد Code نیز مشاهده کنید (اگر به حالت Code تغییر دهید)
-
-</div>
-
-**English:**
-
-**If you selected Code:**
-1. Enter your HTML code in the large text field on the left
-
-**If you selected File:**
-1. Click the **"Browse..."** button
-2. Select your desired HTML file
-3. You can view the file content in the Code field as well (if you switch to Code mode)
-
-### گام 5: تنظیم خروجی | Step 5: Configure Output
-
-<div dir="rtl">
-
-**اگر Code را برای خروجی انتخاب کرده‌اید:**
-- کد تبدیل شده به صورت خودکار در فیلد سمت راست نمایش داده می‌شود
-
-**اگر File را برای خروجی انتخاب کرده‌اید:**
-1. (اختیاری) روی دکمه **"Browse..."** کلیک کنید و مسیر ذخیره فایل را انتخاب کنید
-2. اگر مسیر را مشخص نکنید و ورودی فایل باشد، فایل خروجی به صورت خودکار با نام `[نام_فایل_ورودی]_django.html` در همان پوشه ذخیره می‌شود
-
-</div>
-
-**English:**
-
-**If you selected Code for output:**
-- The converted code will be automatically displayed in the field on the right
-
-**If you selected File for output:**
-1. (Optional) Click the **"Browse..."** button and select the save path for the file
-2. If you don't specify a path and input is a file, the output file will be automatically saved with the name `[input_filename]_django.html` in the same folder
-
-### گام 6: تبدیل | Step 6: Convert
-
-<div dir="rtl">
-
-1. روی دکمه **"Convert"** (در ستون وسط) کلیک کنید
-2. پس از اتمام تبدیل:
-   - اگر خروجی **Code** باشد، کد تبدیل شده در فیلد سمت راست نمایش داده می‌شود
-   - اگر خروجی **File** باشد، فایل در مسیر مشخص شده ذخیره می‌شود
-3. پیام موفقیت نمایش داده می‌شود
-
-</div>
-
-**English:**
-1. Click the **"Convert"** button (in the middle column)
-2. After conversion is complete:
-   - If output is **Code**, the converted code is displayed in the field on the right
-   - If output is **File**, the file is saved at the specified path
-3. A success message will be displayed
-
-### گام 7: پاک‌سازی | Step 7: Clear
-
-<div dir="rtl">
-
-برای شروع مجدد، روی دکمه **"Clear"** کلیک کنید تا تمام فیلدها پاک شوند.
-
-</div>
-
-**English:**
-
-To start over, click the **"Clear"** button to clear all fields.
-
----
-
-## تبدیل‌های انجام شده | Conversions Performed
-
-<div dir="rtl">
-
-برنامه به صورت خودکار موارد زیر را تبدیل می‌کند:
-
-</div>
-
-**English:**
-
-The program automatically converts the following:
-
-### 1. اضافه شدن `{% load static %}` | Adding `{% load static %}`
-
-<div dir="rtl">
-
-در ابتدای فایل HTML، تگ `{% load static %}` اضافه می‌شود (در صورت نبودن):
-
-</div>
-
-**English:**
-
-The `{% load static %}` tag is added at the beginning of the HTML file (if not present):
-
-```html
-{% load static %}
-<html>
-  ...
-</html>
-```
-
-### 2. تبدیل لینک‌های CSS | Converting CSS Links
-
-<div dir="rtl">
-
-```html
-<!-- قبل -->
-<link rel="stylesheet" href="css/style.css">
-
-<!-- بعد -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-```
-
-</div>
-
-**English:**
+**CSS Links**
 ```html
 <!-- Before -->
 <link rel="stylesheet" href="css/style.css">
@@ -400,21 +111,7 @@ The `{% load static %}` tag is added at the beginning of the HTML file (if not p
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 ```
 
-### 3. تبدیل اسکریپت‌های JavaScript | Converting JavaScript Scripts
-
-<div dir="rtl">
-
-```html
-<!-- قبل -->
-<script src="js/main.js"></script>
-
-<!-- بعد -->
-<script src="{% static 'js/main.js' %}"></script>
-```
-
-</div>
-
-**English:**
+**JavaScript**
 ```html
 <!-- Before -->
 <script src="js/main.js"></script>
@@ -423,21 +120,7 @@ The `{% load static %}` tag is added at the beginning of the HTML file (if not p
 <script src="{% static 'js/main.js' %}"></script>
 ```
 
-### 4. تبدیل تصاویر | Converting Images
-
-<div dir="rtl">
-
-```html
-<!-- قبل -->
-<img src="images/logo.png" alt="Logo">
-
-<!-- بعد -->
-<img src="{% static 'images/logo.png' %}" alt="Logo">
-```
-
-</div>
-
-**English:**
+**Images**
 ```html
 <!-- Before -->
 <img src="images/logo.png" alt="Logo">
@@ -446,44 +129,7 @@ The `{% load static %}` tag is added at the beginning of the HTML file (if not p
 <img src="{% static 'images/logo.png' %}" alt="Logo">
 ```
 
-### 5. تبدیل فایل‌های صوتی و ویدیویی | Converting Audio and Video Files
-
-<div dir="rtl">
-
-```html
-<!-- قبل -->
-<source src="media/video.mp4" type="video/mp4">
-
-<!-- بعد -->
-<source src="{% static 'media/video.mp4' %}" type="video/mp4">
-```
-
-</div>
-
-**English:**
-```html
-<!-- Before -->
-<source src="media/video.mp4" type="video/mp4">
-
-<!-- After -->
-<source src="{% static 'media/video.mp4' %}" type="video/mp4">
-```
-
-### 6. تبدیل srcset در تصاویر | Converting srcset in Images
-
-<div dir="rtl">
-
-```html
-<!-- قبل -->
-<img srcset="img-1x.jpg 1x, img-2x.jpg 2x">
-
-<!-- بعد -->
-<img srcset="{% static 'img-1x.jpg' %} 1x, {% static 'img-2x.jpg' %} 2x">
-```
-
-</div>
-
-**English:**
+**Responsive Images**
 ```html
 <!-- Before -->
 <img srcset="img-1x.jpg 1x, img-2x.jpg 2x">
@@ -492,323 +138,229 @@ The `{% load static %}` tag is added at the beginning of the HTML file (if not p
 <img srcset="{% static 'img-1x.jpg' %} 1x, {% static 'img-2x.jpg' %} 2x">
 ```
 
----
-
-## نکات مهم | Important Notes
-
-### مواردی که تبدیل نمی‌شوند | Items That Are Not Converted
-
-<div dir="rtl">
-
-1. **لینک‌های HTTP/HTTPS** - لینک‌های خارجی تغییری نمی‌کنند
-   ```html
-   <link href="https://cdn.example.com/style.css"> <!-- بدون تغییر -->
-   ```
-
-2. **لینک‌های Data URI** - تصاویر base64 تبدیل نمی‌شوند
-   ```html
-   <img src="data:image/png;base64,..."> <!-- بدون تغییر -->
-   ```
-
-3. **لینک‌های از قبل تبدیل شده** - لینک‌هایی که قبلاً `{% static %}` دارند
-   ```html
-   <link href="{% static 'css/style.css' %}"> <!-- بدون تغییر -->
-   ```
-
-4. **لینک‌های پروتکل** - لینک‌هایی که با `//` شروع می‌شوند
-   ```html
-   <script src="//cdn.example.com/script.js"> <!-- بدون تغییر -->
-   ```
-
-</div>
-
-**English:**
-1. **HTTP/HTTPS Links** - External links remain unchanged
-   ```html
-   <link href="https://cdn.example.com/style.css"> <!-- unchanged -->
-   ```
-
-2. **Data URI Links** - Base64 images are not converted
-   ```html
-   <img src="data:image/png;base64,..."> <!-- unchanged -->
-   ```
-
-3. **Already Converted Links** - Links that already have `{% static %}`
-   ```html
-   <link href="{% static 'css/style.css' %}"> <!-- unchanged -->
-   ```
-
-4. **Protocol Links** - Links starting with `//`
-   ```html
-   <script src="//cdn.example.com/script.js"> <!-- unchanged -->
-   ```
-
----
-
-## ساختار پروژه | Project Structure
+### Project Structure
 
 ```
-convert_to_django_template.py/
-├── django_template_converter/     # Main package
-│   ├── __init__.py               # Package settings
-│   ├── core/                     # Main conversion module
-│   │   ├── __init__.py
-│   │   └── converter.py          # DjangoTemplateConverter class
-│   ├── gui/                      # GUI module
-│   │   ├── __init__.py
-│   │   └── window.py             # DjangoTemplateConverterGUI class
-│   └── utils/                    # Utility functions
-│       ├── __init__.py
-│       └── helpers.py            # Helper functions
-├── tests/                        # Unit tests
-│   ├── __init__.py
-│   └── test_converter.py         # Converter tests
-├── main.py                       # Main entry point
-├── setup.py                      # Package setup file
-├── requirements.txt              # Project dependencies
-├── .gitignore                   # Git ignore file
-└── README.md                    # This file
+convert-to-django-template.py/
+├── django_template_converter/
+│   ├── core/
+│   │   └── converter.py
+│   ├── gui/
+│   │   └── window.py
+│   └── utils/
+│       └── helpers.py
+├── tests/
+│   └── test_converter.py
+├── main.py
+├── pyproject.toml
+└── requirements.txt
 ```
 
-### توضیحات ساختار | Structure Description
+### Configuration
 
-<div dir="rtl">
+The converter automatically handles:
+- External URLs (http://, https://)
+- Protocol-relative URLs (//)
+- Data URIs (base64 images)
+- Already converted templates
 
-- **`django_template_converter/`**: پکیج اصلی که شامل تمام منطق برنامه است
-  - **`core/`**: منطق اصلی تبدیل HTML به Django Template (بدون وابستگی به GUI)
-  - **`gui/`**: رابط کاربری گرافیکی با tkinter
-  - **`utils/`**: توابع کمکی و کاربردی
-  
-- **`tests/`**: تست‌های واحد برای اطمینان از صحت عملکرد
+These patterns are excluded from conversion.
 
-- **`main.py`**: نقطه ورود اصلی برنامه که GUI را راه‌اندازی می‌کند
-
-- **`setup.py`**: امکان نصب پروژه به عنوان یک پکیج Python
-
-</div>
-
-**English:**
-- **`django_template_converter/`**: Main package containing all program logic
-  - **`core/`**: Core logic for converting HTML to Django Template (independent of GUI)
-  - **`gui/`**: Graphical user interface with tkinter
-  - **`utils/`**: Helper utility functions
-  
-- **`tests/`**: Unit tests to ensure correct functionality
-
-- **`main.py`**: Main entry point that launches the GUI
-
-- **`setup.py`**: Allows installation of the project as a Python package
-
----
-
-## عیب‌یابی | Troubleshooting
-
-### مشکل: برنامه اجرا نمی‌شود | Problem: Application Won't Run
-
-<div dir="rtl">
-
-**راه حل:**
-- مطمئن شوید Python 3.6+ نصب شده است:
-  ```bash
-  python --version
-  ```
-- وابستگی‌ها را دوباره نصب کنید:
-  ```bash
-  pip install --upgrade beautifulsoup4 lxml
-  ```
-
-</div>
-
-**English - Solution:**
-- Make sure Python 3.6+ is installed:
-  ```bash
-  python --version
-  ```
-- Reinstall dependencies:
-  ```bash
-  pip install --upgrade beautifulsoup4 lxml
-  ```
-
-### مشکل: خطای encoding | Problem: Encoding Error
-
-<div dir="rtl">
-
-**راه حل:**
-- فایل HTML شما باید UTF-8 باشد
-- اگر فایل شما encoding دیگری دارد، آن را به UTF-8 تبدیل کنید
-
-</div>
-
-**English - Solution:**
-- Your HTML file must be UTF-8
-- If your file has a different encoding, convert it to UTF-8
-
-### مشکل: tkinter نصب نیست | Problem: tkinter Not Installed
-
-<div dir="rtl">
-
-**راه حل:**
-
-**Linux:**
-```bash
-sudo apt-get install python3-tk
-```
-
-**macOS:**
-```bash
-brew install python-tk
-```
-
-**Windows:**
-tkinter معمولاً به صورت پیش‌فرض با Python نصب است.
-
-</div>
-
-**English - Solution:**
-
-**Linux:**
-```bash
-sudo apt-get install python3-tk
-```
-
-**macOS:**
-```bash
-brew install python-tk
-```
-
-**Windows:**
-tkinter is usually pre-installed with Python.
-
----
-
-## مشارکت | Contributing
-
-<div dir="rtl">
-
-برای مشارکت در پروژه:
-
-1. Fork کنید
-2. یک branch جدید ایجاد کنید (`git checkout -b feature/AmazingFeature`)
-3. تغییرات خود را commit کنید (`git commit -m 'Add some AmazingFeature'`)
-4. به branch خود push کنید (`git push origin feature/AmazingFeature`)
-5. یک Pull Request باز کنید
-
-</div>
-
-**English:**
-
-To contribute to the project:
+### Contributing
 
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to your branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/NewFeature`)
+3. Commit your changes (`git commit -m 'Add NewFeature'`)
+4. Push to the branch (`git push origin feature/NewFeature`)
 5. Open a Pull Request
 
----
-
-## مجوز | License
-
-<div dir="rtl">
-
-این پروژه تحت مجوز MIT منتشر شده است.
-
-</div>
-
-**English:**
+### License
 
 This project is licensed under the MIT License.
 
----
+### Support
 
-## توسعه‌دهنده | Developer
-
-<div dir="rtl">
-
-برای سوالات و پیشنهادات، لطفاً یک Issue باز کنید.
-
-</div>
-
-**English:**
-
-For questions and suggestions, please open an Issue.
+- Report issues: [GitHub Issues](https://github.com/your-repo/issues)
+- Financial support: See support section above
 
 ---
 
-## مثال کامل | Complete Example
+## فارسی
 
-<div dir="rtl">
+### مروری بر پروژه
 
-فرض کنید یک فایل HTML به نام `blog.html` دارید:
+Django Template Converter یک برنامه دسکتاپ است که به صورت خودکار فایل‌های HTML را به تمپلیت‌های سازگار با Django تبدیل می‌کند. این ابزار دارای رابط گرافیکی ساخته شده با tkinter بوده و تبدیل منابع استاتیک به سینتکس تمپلیت Django را انجام می‌دهد.
 
+### پیش‌نمایش رابط کاربری
+
+<div align="center">
+  <img src="screenshots/app-interface.png" alt="رابط کاربری Django Template Converter" width="800">
+  <p><em>رابط اصلی برنامه شامل پنل‌های ورودی/خروجی و کنترل‌های تبدیل</em></p>
 </div>
 
-**English:**
+### ویژگی‌ها
 
-Suppose you have an HTML file named `blog.html`:
+**رابط کاربری**
+- رابط گرافیکی با چیدمان دو ستونی
+- پشتیبانی از ورودی کد و انتخاب فایل
+- پیش‌نمایش تبدیل به صورت لحظه‌ای
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <img src="images/logo.png" alt="Logo">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+**قابلیت‌های تبدیل**
+- درج خودکار تگ `{% load static %}`
+- تبدیل لینک‌های stylesheet
+- تبدیل منابع JavaScript
+- تبدیل منابع تصویر
+- تبدیل منابع صوتی و تصویری
+- تبدیل ویژگی srcset برای تصاویر واکنش‌گرا
+
+**انعطاف‌پذیری**
+- ورودی مستقیم کد یا انتخاب فایل
+- نمایش خروجی در رابط یا ذخیره در فایل
+- نمایش و ذخیره‌سازی همزمان
+
+### پشته فناوری
+
+| جزء | فناوری |
+|-----|---------|
+| زبان برنامه‌نویسی | Python 3.6+ |
+| پردازشگر HTML | BeautifulSoup4 |
+| پردازشگر XML | lxml |
+| فریمورک رابط گرافیکی | tkinter |
+| مدیریت پکیج | setuptools |
+
+### نصب
+
+1. کلون کردن مخزن
+```bash
+git clone <repository-url>
+cd convert-to-django-template.py
 ```
 
-<div dir="rtl">
-
-پس از تبدیل، فایل `blog_django.html` به این صورت خواهد بود:
-
-</div>
-
-**English:**
-
-After conversion, the `blog_django.html` file will look like this:
-
-```html
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <img src="{% static 'images/logo.png' %}" alt="Logo">
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-</body>
-</html>
+2. نصب وابستگی‌ها
+```bash
+pip install -r requirements.txt
 ```
 
+3. (اختیاری) نصب به عنوان پکیج
+```bash
+pip install -e .
+```
+
+### نحوه استفاده
+
+**روش اول: اجرای مستقیم**
+```bash
+python main.py
+```
+
+**روش دوم: خط فرمان (پس از نصب پکیج)**
+```bash
+django-template-converter
+```
+
+**روش سوم: ماژول Python**
+```python
+from django_template_converter import Converter
+
+converter = Converter()
+output_path = converter.convert_file("input.html", "output.html")
+```
+
+### نمونه‌های تبدیل
+
+**لینک‌های CSS**
+```html
+<!-- قبل -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- بعد -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+```
+
+**JavaScript**
+```html
+<!-- قبل -->
+<script src="js/main.js"></script>
+
+<!-- بعد -->
+<script src="{% static 'js/main.js' %}"></script>
+```
+
+**تصاویر**
+```html
+<!-- قبل -->
+<img src="images/logo.png" alt="Logo">
+
+<!-- بعد -->
+<img src="{% static 'images/logo.png' %}" alt="Logo">
+```
+
+**تصاویر واکنش‌گرا**
+```html
+<!-- قبل -->
+<img srcset="img-1x.jpg 1x, img-2x.jpg 2x">
+
+<!-- بعد -->
+<img srcset="{% static 'img-1x.jpg' %} 1x, {% static 'img-2x.jpg' %} 2x">
+```
+
+### ساختار پروژه
+
+```
+convert-to-django-template.py/
+├── django_template_converter/
+│   ├── core/
+│   │   └── converter.py
+│   ├── gui/
+│   │   └── window.py
+│   └── utils/
+│       └── helpers.py
+├── tests/
+│   └── test_converter.py
+├── main.py
+├── pyproject.toml
+└── requirements.txt
+```
+
+### پیکربندی
+
+تبدیل‌کننده به صورت خودکار موارد زیر را مدیریت می‌کند:
+- آدرس‌های خارجی (http://, https://)
+- آدرس‌های مستقل از پروتکل (//)
+- Data URI (تصاویر base64)
+- تمپلیت‌های از قبل تبدیل شده
+
+این الگوها از تبدیل استثنا می‌شوند.
+
+### مشارکت
+
+1. مخزن را Fork کنید
+2. شاخه ویژگی جدید ایجاد کنید (`git checkout -b feature/NewFeature`)
+3. تغییرات خود را Commit کنید (`git commit -m 'Add NewFeature'`)
+4. به شاخه خود Push کنید (`git push origin feature/NewFeature`)
+5. یک Pull Request باز کنید
+
+### مجوز
+
+این پروژه تحت مجوز MIT منتشر شده است.
+
+### پشتیبانی
+
+- گزارش مشکلات: [GitHub Issues](https://github.com/your-repo/issues)
+- حمایت مالی: بخش حمایت بالای صفحه را ببینید
+
 ---
 
-## نسخه‌ها | Versions
+<div align="center">
 
-<div dir="rtl">
+*Version* 2.0.0 | *Python* 3.6+ | *Django* Compatible
 
-- **v2.0** - رابط کاربری گرافیکی با tkinter
-- **v1.0** - نسخه اولیه با رابط خط فرمان
-
-</div>
-
-**English:**
-- **v2.0** - Graphical user interface with tkinter
-- **v1.0** - Initial version with command line interface
+![Python](https://img.shields.io/badge/python-3.6+-blue.svg)
+![BeautifulSoup4](https://img.shields.io/badge/beautifulsoup4-4.12.0+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ---
 
-<div dir="rtl">
-
-**نکته:** این ابزار برای تبدیل خودکار لینک‌های استاتیک طراحی شده است. لطفاً فایل خروجی را بررسی کنید تا از صحت تبدیل اطمینان حاصل کنید.
+© 2025 Django Template Converter
 
 </div>
-
-**English - Note:** This tool is designed for automatic conversion of static links. Please review the output file to ensure conversion accuracy.
